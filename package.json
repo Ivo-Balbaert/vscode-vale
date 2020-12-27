@@ -10,7 +10,7 @@
         "Programming Languages"
     ],
     "icon": "images/logo.png",
-    "repository": "https://github.com/valetech/vscode-vale",
+    "repository": "https://github.com/Ivo-Balbaert/vscode-vale",
     "publisher": "Ivo-Balbaert",
     "contributes": {
         "languages": [
