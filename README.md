@@ -1,6 +1,6 @@
 # vale-lang README
 
-This is a vscode extension to support syntax highlighting for the [Vale Programming Language](https://vale.dev).
+This is a vscode extension to support developing in the [Vale Programming Language](https://vale.dev).
 
 ## Features
 
