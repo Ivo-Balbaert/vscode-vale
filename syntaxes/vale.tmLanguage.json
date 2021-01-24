@@ -97,7 +97,7 @@
 			"patterns": [
 				{
 					"name": "keyword.control",
-					"match": "\\b(fn|ret|infer-ret|struct|imm|inl|interface|impl|for|sealed|rules|implements|mat|mut)\\b"
+					"match": "\\b(fn|ret|infer-ret|struct|imm|inl|interface|impl|for|sealed|rules|implements|mat|mut|virtual|abstract|this|void|destruct|yon|export)\\b"
 				}
 			]
 		},
