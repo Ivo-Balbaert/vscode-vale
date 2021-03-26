@@ -7,3 +7,4 @@ Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how 
 ## [Unreleased]
 
 - Initial release Dec 27 2020
+- 2021 Feb 15: Capitalized language name to Vale

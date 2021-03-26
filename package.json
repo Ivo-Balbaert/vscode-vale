@@ -15,9 +15,9 @@
     "contributes": {
         "languages": [
             {
-                "id": "vale",
+                "id": "Vale",
                 "aliases": [
-                    "vale",
+                    "Vale",
                     "vale"
                 ],
                 "extensions": [
@@ -28,7 +28,7 @@
         ],
         "grammars": [
             {
-                "language": "vale",
+                "language": "Vale",
                 "scopeName": "source.vale",
                 "path": "./syntaxes/vale.tmLanguage.json"
             }

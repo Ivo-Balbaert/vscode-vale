@@ -97,7 +97,7 @@
 			"patterns": [
 				{
 					"name": "keyword.control",
-					"match": "\\b(fn|ret|infer-ret|struct|imm|inl|interface|impl|for|sealed|rules|implements|mat|mut|virtual|abstract|this|void|destruct|yon|export)\\b"
+					"match": "\\b(abstract|as|destruct|drop|export|extern|fn|for|imm|impl|infer-ret|inl|interface|lock|mat|mut|nad|not|or|ret|rules|sealed|struct|this|virtual|void|weakable|yon)\\b"
 				}
 			]
 		},
@@ -105,7 +105,7 @@
 			"patterns": [
 				{
 					"name": "variable.language",
-					"match": "\\b(export)\\b"
+					"match": "\\b()\\b"
 				}
 			]
 		},
