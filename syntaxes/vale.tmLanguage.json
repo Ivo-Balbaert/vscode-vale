@@ -97,19 +97,19 @@
 				"patterns": [
 					{
 						"name": "keyword.control",
-						"match": "\\b(as|else|fn|for|if|imm|impl|infer-ret|inl|lock|mat|mut|nad|not|or|ret|struct|this|void|yon)\\b"
+						"match": "\\b(as|else|fn|for|if|imm|impl|infer-ret|inl|lock|mat|mut|nad|not|or|ret|yon)\\b"
 					},
 					{
 						"name": "keyword.other",
-						"match": "\\b(abstract|destruct|drop|interface|rules|sealed|virtual|weakable)\\b"
+						"match": "\\b(abstract|destruct|drop|interface|rules|sealed|struct|this|virtual|weakable)\\b"
 					},
 					{
 						"name": "constant.language",
-						"match": "\\b(true|false)\\b"
+						"match": "\\b(true|false|void)\\b"
 					},
 					{
 						"name": "storage.type",
-						"match": "\\b(str|int|bool)\\b"
+						"match": "\\b(str|int|bool|Array)\\b"
 					}
 				]
 			},
