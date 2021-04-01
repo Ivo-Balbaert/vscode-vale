@@ -5,6 +5,8 @@ This is a vscode extension to support developing in the [Vale Programming Langua
 ## Instructions
 Download and unzip. Copy the entire folder into .vscode/extensions within your user folder (/home/username or c:\users\username, not your workspace folder). This will enable syntax highlighting next time VSCode is run.
 
+Use this plugin to explore the [Vale examples](https://github.com/Ivo-Balbaert/Vale_Examples)!
+
 ## Features
 
 Syntax Highlighting for `.vale` files
