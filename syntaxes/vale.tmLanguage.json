@@ -1,158 +1,170 @@
-{
-	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
-	"name": "Vale",
-	"patterns": [
-		{
-			"include": "#keywords"
-		},
-		{
-			"include": "#doubleQuoteStrings"
-		},
-		{
-			"include": "#singleQuoteStrings"
-		},
-		{
-			"include": "#comment"
-		},
-		{
-			"include": "#importKeywords"
-		},
-		{
-			"include": "#booleans"
-		},
-		{
-			"include": "#numbers"
-		},
-		{
-			"include": "#operators"
-		},
-		{
-			"include": "#symbols"
-		}
-	],
-	"repository": {
-		"comment": {
-			"patterns": [
-				{
-					"name": "comment.block.documentation",
-					"begin": "/\\*\\*(?!/)",
-					"beginCaptures": {
-						"0": {
-							"name": "punctuation.definition.comment"
+	{
+		"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+		"name": "Vale",
+		"patterns": [
+			{
+				"include": "#keywords"
+			},
+			{
+				"include": "#doubleQuoteStrings"
+			},
+			{
+				"include": "#singleQuoteStrings"
+			},
+			{
+				"include": "#comment"
+			},
+			{
+				"include": "#importKeywords"
+			},
+			{
+				"include": "#booleans"
+			},
+			{
+				"include": "#numbers"
+			},
+			{
+				"include": "#operators"
+			},
+			{
+				"include": "#symbols"
+			}
+		],
+		"repository": {
+			"comment": {
+				"patterns": [
+					{
+						"name": "comment.block.documentation",
+						"begin": "/\\*\\*(?!/)",
+						"beginCaptures": {
+							"0": {
+								"name": "punctuation.definition.comment"
+							}
+						},
+						"end": "\\*/",
+						"endCaptures": {
+							"0": {
+								"name": "punctuation.definition.comment"
+							}
 						}
 					},
-					"end": "\\*/",
-					"endCaptures": {
-						"0": {
-							"name": "punctuation.definition.comment"
+					{
+						"name": "comment.block",
+						"begin": "(/\\*)(?:\\s*((@)internal)(?=\\s|(\\*/)))?",
+						"beginCaptures": {
+							"1": {
+								"name": "punctuation.definition.comment"
+							},
+							"2": {
+								"name": "storage.type.internaldeclaration"
+							},
+							"3": {
+								"name": "punctuation.decorator.internaldeclaration"
+							}
+						},
+						"end": "\\*/",
+						"endCaptures": {
+							"0": {
+								"name": "punctuation.definition.comment"
+							}
 						}
+					},
+					{
+						"begin": "(^[ \\t]+)?((//)(?:\\s*((@)internal)(?=\\s|$))?)",
+						"beginCaptures": {
+							"1": {
+								"name": "punctuation.whitespace.comment.leading"
+							},
+							"2": {
+								"name": "comment.line.double-slash"
+							},
+							"3": {
+								"name": "punctuation.definition.comment"
+							},
+							"4": {
+								"name": "storage.type.internaldeclaration"
+							},
+							"5": {
+								"name": "punctuation.decorator.internaldeclaration"
+							}
+						},
+						"end": "(?=$)",
+						"contentName": "comment.line.double-slash"
 					}
-				},
-				{
-					"name": "comment.block",
-					"begin": "(/\\*)(?:\\s*((@)internal)(?=\\s|(\\*/)))?",
-					"beginCaptures": {
-						"1": {
-							"name": "punctuation.definition.comment"
-						},
-						"2": {
-							"name": "storage.type.internaldeclaration"
-						},
-						"3": {
-							"name": "punctuation.decorator.internaldeclaration"
-						}
+				]
+			},
+			"keywords": {
+				"patterns": [
+					{
+						"name": "keyword.control",
+						"match": "\\b(as|fn|for|imm|impl|infer-ret|inl|lock|mat|mut|nad|not|or|ret|struct|this|void|yon)\\b"
 					},
-					"end": "\\*/",
-					"endCaptures": {
-						"0": {
-							"name": "punctuation.definition.comment"
-						}
+					{
+						"name": "keyword.other",
+						"match": "\\b(abstract|destruct|drop|interface|rules|sealed|virtual|weakable)\\b"
+					},
+					{
+						"name": "constant.language",
+						"match": "\\b(true|false)\\b"
+					},
+					{
+						"name": "storage.type",
+						"match": "\\b(str|int|bool)\\b"
 					}
-				},
-				{
-					"begin": "(^[ \\t]+)?((//)(?:\\s*((@)internal)(?=\\s|$))?)",
-					"beginCaptures": {
-						"1": {
-							"name": "punctuation.whitespace.comment.leading"
-						},
-						"2": {
-							"name": "comment.line.double-slash"
-						},
-						"3": {
-							"name": "punctuation.definition.comment"
-						},
-						"4": {
-							"name": "storage.type.internaldeclaration"
-						},
-						"5": {
-							"name": "punctuation.decorator.internaldeclaration"
-						}
-					},
-					"end": "(?=$)",
-					"contentName": "comment.line.double-slash"
-				}
-			]
+				]
+			},
+			"importKeywords": {
+				"patterns": [
+					{
+						"name": "variable.language",
+						"match": "\\b(export|extern)\\b"
+					}
+				]
+			},
+			"numbers": {
+				"match": "\\b((0(x|X)[0-9a-fA-F]*)|(([0-9]+\\.?[0-9]*)|(\\.[0-9]+))((e|E)(\\+|-)?[0-9]+)?)(L|l|UL|ul|u|U|F|f|ll|LL|ull|ULL)?\\b",
+				"name": "string.other"
+			},
+			"symbols": {
+				"patterns": [
+					{
+						"name": "constant.numeric",
+						"match": "[,\\{\\}\\(\\)<>\\[\\]\\.=@:]"
+					}
+				]
+			},
+			"operators": {
+				"patterns": [
+					{
+						"name": "constant.numeric",
+						"match": "[+\\-\/*^.~`!@#$%&|:;<?=][+\\-\/*^.~`!@#$%&|:;<>?=]*"
+					}
+				]
+			},
+			"booleans": {
+				"patterns": [
+					{
+						"name": "string.other",
+						"match": "\\b(true|false)\\b"
+					}
+				]
+			},
+			"doubleQuoteStrings": {
+				"name": "string.quoted.double",
+				"begin": "\"",
+				"end": "\"",
+				"patterns": [
+					{
+						"name": "constant.character.escape",
+						"match": "\\\\."
+					}
+				]
+			},
+			"singleQuoteStrings": {
+				"name": "string.quoted.single",
+				"begin": "'",
+				"end": "'"
+			}
 		},
-		"keywords": {
-			"patterns": [
-				{
-					"name": "keyword.control",
-					"match": "\\b(abstract|as|destruct|drop|export|extern|fn|for|imm|impl|infer-ret|inl|interface|lock|mat|mut|nad|not|or|ret|rules|sealed|struct|this|virtual|void|weakable|yon)\\b"
-				}
-			]
-		},
-		"importKeywords": {
-			"patterns": [
-				{
-					"name": "variable.language",
-					"match": "\\b()\\b"
-				}
-			]
-		},
-		"numbers": {
-			"match": "\\b((0(x|X)[0-9a-fA-F]*)|(([0-9]+\\.?[0-9]*)|(\\.[0-9]+))((e|E)(\\+|-)?[0-9]+)?)(L|l|UL|ul|u|U|F|f|ll|LL|ull|ULL)?\\b",
-			"name": "string.other"
-		},
-		"symbols": {
-			"patterns": [
-				{
-					"name": "constant.numeric",
-					"match": "[,\\{\\}\\(\\)<>\\[\\]\\.=@:]"
-				}
-			]
-		},
-		"operators": {
-			"patterns": [
-				{
-					"name": "constant.numeric",
-					"match": "[+\\-\/*^.~`!@#$%&|:;<?=][+\\-\/*^.~`!@#$%&|:;<>?=]*"
-				}
-			]
-		},
-		"booleans": {
-			"patterns": [
-				{
-					"name": "string.other",
-					"match": "\\b(true|false)\\b"
-				}
-			]
-		},
-		"doubleQuoteStrings": {
-			"name": "string.quoted.double",
-			"begin": "\"",
-			"end": "\"",
-			"patterns": [
-				{
-					"name": "constant.character.escape",
-					"match": "\\\\."
-				}
-			]
-		},
-		"singleQuoteStrings": {
-			"name": "string.quoted.single",
-			"begin": "'",
-			"end": "'"
-		}
-	},
-	"scopeName": "source.vale"
-}
+		"scopeName": "source.vale"
+	}
