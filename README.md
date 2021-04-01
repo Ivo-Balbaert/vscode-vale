@@ -1,4 +1,4 @@
-# vale-lang README
+# Vale-lang README
 
 This is a vscode extension to support developing in the [Vale Programming Language](https://vale.dev).
 
