@@ -97,7 +97,7 @@
 				"patterns": [
 					{
 						"name": "keyword.control",
-						"match": "\\b(as|fn|for|imm|impl|infer-ret|inl|lock|mat|mut|nad|not|or|ret|struct|this|void|yon)\\b"
+						"match": "\\b(as|else|fn|for|if|imm|impl|infer-ret|inl|lock|mat|mut|nad|not|or|ret|struct|this|void|yon)\\b"
 					},
 					{
 						"name": "keyword.other",
